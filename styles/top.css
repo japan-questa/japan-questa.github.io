@@ -1,0 +1,252 @@
+/*====================================
+	じゃぱんくえすたについて
+*/
+.about:not([hidden]) {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #F4F3EF;
+	margin: unset;
+}
+
+.about h2 {
+	font-size: 1.7em;
+	background: unset;
+	padding: unset;
+}
+
+.about > img {
+	order: -1;
+	border: solid white 0.3em;
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+/*====================================
+	主催あいさつ
+*/
+#message + div {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	flex-direction: row-reverse;
+}
+
+#message + div > * {
+	width: min(calc(100% - var(--page-margin) * 2), 1.5 * calc(var(--level3-contents-width)));
+	margin: unset;
+}
+
+/*====================================
+	開催概要
+*/
+:is(#about, #campaign) + div {
+	width: min(100%, calc(3 * var(--level3-contents-width) + 2 * var(--gap)));
+}
+
+#access,
+#worlds,
+#campaign {
+	width: calc(3 * var(--level3-contents-width) + 2 * var(--gap));
+}
+
+#access kbd {
+	margin: 0 0.2em;
+	padding: 0.5em 1em;
+	font-weight: bold;
+	color: whitesmoke;
+	background: #2E494E;
+	border: solid 0.2em #435E63;
+	border-radius: 0.2em;
+	white-space: nowrap;
+	line-height: 3;
+}
+
+#access kbd::before {
+	content: "🔍";
+	margin-right: 0.5em;
+}
+
+#access kbd:nth-of-type(2) {
+	color: dimgray;
+	background: whitesmoke;
+	padding-left: 0.2em;
+	padding-right: 2em;
+}
+
+#worlds ul {
+	padding: unset;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+
+	/* filter: grayscale(1); */
+}
+
+#worlds li {
+	width: 10em;
+}
+
+#worlds a {
+	display: flex;
+	flex-direction: column;
+	color: #B7B7B7;
+	--border-color: #303740;
+	--background: linear-gradient(black, var(--border-color));
+	background: var(--background);
+	text-decoration: unset;
+	font-weight: bold;
+	border-radius: 0.5em;
+	border: solid 0.4em var(--border-color);
+	overflow: hidden;
+	position: relative;
+}
+
+#worlds a::after {
+	content: "";
+	display: block;
+	width: 2em;
+	height: 1.5em;
+	--background: #000000AA;
+	background: url("/images/indicator-cross-platform.png") center / 80% auto no-repeat, #00000088;
+	border-radius: 0 0 0 40%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#worlds img {
+	width: 100%;
+}
+
+#worlds span {
+	margin-left: 0.2em;
+}
+
+#worlds span:nth-of-type(1) {
+	font-size: 0.75em;
+}
+
+#worlds span:nth-of-type(2) {
+	font-size: 0.85em;
+}
+
+#poster {
+	display: grid;
+	grid-template-columns: repeat(2, var(--level3-contents-width));
+	grid-auto-rows: auto;
+	column-gap: 0.5rem;
+	width: calc(2 * var(--level3-contents-width) + var(--gap));
+}
+
+#poster h3 {
+	grid-column: span 2;
+}
+
+#poster img {
+	width: min(100%, var(--level3-contents-width));
+}
+
+#campaign h4 {
+	display: none;
+}
+
+#campaign p:nth-of-type(1) {
+	margin-bottom: 3em;
+}
+
+#campaign img {
+	width: min(100%, calc(3 * var(--level3-contents-width) + 2 * var(--gap)));
+}
+
+#campaign p:nth-of-type(2) {
+	margin-top: 3em;
+}
+
+#campaign p:is(:nth-of-type(2), :nth-of-type(3)) {
+	text-align: center;
+}
+
+@media (max-width: 67.4rem) { /* calc(3 * var(--level3-contents-width) + 2 * var(--gap) + 2 * var(--page-margin)) */
+	#about + div > * {
+		width: min(calc(100% - 2 * var(--page-margin)), calc(2 * var(--level3-contents-width) + var(--gap)));
+	}
+}
+
+@media (max-width: 45.4rem) { /* calc(2 * var(--level3-contents-width) + var(--gap) + 2 * var(--page-margin)) */
+	#poster {
+		display: block;
+	}
+}
+
+/*====================================
+	3つのWorld
+*/
+.worlds {
+	counter-reset: world;
+}
+
+.worlds h3 {
+	text-align: center;
+	background: unset;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.worlds h3::before {
+	font-size: unset;
+	counter-increment: world;
+	content: counter(world, decimal-leading-zero);
+	background: #EA5D52;
+	--circle-size: 5rem;
+	width: var(--circle-size);
+	height: var(--circle-size);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	line-height: calc(var(--circle-size) * 1.5);
+	color: white;
+	margin-bottom: 2rem;
+}
+
+.worlds img {
+	width: 100%;
+}
+
+.worlds em {
+	font-weight: bold;
+}
+
+.worlds em::before {
+	content: "「";
+}
+
+.worlds em::after {
+	content: "」";
+}
+
+/*====================================
+	サブページへのリンク
+*/
+.sub-page-links {
+	display: none;
+}
+
+/*====================================
+	よくある質問
+*/
+.q-and-a dd {
+	margin: 0.5em 0 1em;
+	background: #EEF6EB;
+	padding: 1em 0.5em;
+}
+
+/*====================================
+	お知らせ
+*/
+.twitter-timeline-rendered {
+	width: min(calc(100% - var(--page-margin) * 2), 600px);
+}

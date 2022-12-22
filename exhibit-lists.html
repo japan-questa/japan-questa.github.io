@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+	<link rel="icon" href="favicon.ico" />
+	<title>じゃぱんくえすた　出展一覧</title>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="じゃぱんくえすた　出展一覧" />
+	<meta name="twitter:description" content="『じゃぱんくえすた』の出展アバター・イベントの一覧です。" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="/styles/common.css" />
+	<link rel="stylesheet" href="/styles/exhibit-lists.css" />
+	<script type="module" src="/scripts/index.js?20221111"></script>
+</head>
+<body class="root">
+
+<common-header pageHeading="出展一覧"></common-header>
+
+<nav>
+	<ul>
+		<li><a href="#avatar">アバター</a></li>
+		<li><a href="#event-poster">イベント (ポスター)</a></li>
+		<li><a href="#event-booth">イベント (ブース)</a></li>
+	</ul>
+</nav>
+
+<h2 id="avatar">アバター</h2>
+<exhibit-list category="avatar"></exhibit-list>
+
+<h2 id="event-poster">イベント (ポスター)</h2>
+<exhibit-list category="eventPoster"></exhibit-list>
+
+<h2 id="event-booth">イベント (ブース)</h2>
+<exhibit-list category="eventBooth"></exhibit-list>
+
+<common-footer></common-footer>
+
+</body>
+</html>

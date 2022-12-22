@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+	<link rel="icon" href="favicon.ico" />
+	<title>じゃぱんくえすた　イベント出展に関する情報</title>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="じゃぱんくえすた　イベント出展に関する情報" />
+	<meta name="twitter:description" content="『じゃぱんくえすた』の、イベント出展に関する情報をまとめたページです。" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="/styles/common.css?20220820" />
+	<link rel="stylesheet" href="/styles/exhibit.css?20220820" />
+	<script type="module" src="/scripts/index.js?20221015"></script>
+</head>
+<body class="root">
+
+<common-header pageHeading="イベント出展に関する情報"></common-header>
+
+<exhibit-common class="root"></exhibit-common>
+
+<h3>イベント出展 (ポスター)</h3>
+<p>(8月30日変更)</p>
+<ul>
+	<li>解像度は<ins>、長辺が1024pxになるよう圧縮されます。</ins><del>1024×1024px以下に下げられます。</del>
+		<ins><small>ただし、圧縮前の解像度が高いほど、圧縮後の品質が高くなります。</small></ins></li>
+	<li><ins>アスペクト比 (縦横比) は自由です。
+		<small>ヨコ 1 : タテ √2 (1.41) を推奨します。</small></ins></li>
+	<li><ins><strong>長辺の解像度を1024px以上にする必要があります。</strong></ins></li>
+	<li><ins><strong>タテ・ヨコの解像度を、いずれも4の倍数ピクセルにする必要があります。</strong>
+		<small>1448×2048pxを推奨します。</small></ins></li>
+	<li><ins>透過・半透明を禁止します。</ins></li>
+	<li><strong>ブース出展をされる場合は応募できません。(ポスターはブース内に設置可能です)</strong></li>
+</ul>
+
+
+<h3>イベント出展 (ブース)</h3>
+<ul>
+	<li>大正をイメージした建物を、入稿ツールに同梱いたします。</li>
+	<li>配布の建物フォルダ内には洋風タイプと和風タイプの建物がそれぞれ複数用意されているので、お好きなタイプから1種類お選びいただけます。</li>
+	<li>建物内に、イベントをイメージしたオブジェクトを配置して入稿してください。</li>
+	<li>建物内にはそれぞれ内装が用意されているものと、空洞のものがあります。入稿したいオブジェクトの内容に合わせて、どちらかお選びください。</li>
+	<li>建物内装は自由に改変してかまいません。 (建物外壁の改変はできません)</li>
+	<li>建物内装は入稿ツールによるビルド容量計算・パフォーマンス計測対象に含まれます。必要に応じてメッシュの結合や、テクスチャの圧縮等をしてください。</li>
+	<li>ブースには外殻が付きます。つまり、上限と同程度のサイズでブースを作成した場合、床と同じく上下左右奥の外壁は見えなくなります。</li>
+	<li>負荷軽減のため、ブースは長屋の中に配置され、近づくと扉が開く仕組みになります。</li>
+	<li>長屋に常に表示しておく看板<ins>のテクスチャ</ins>を、ブースと別に<ins>同じフォームから</ins>入稿していただきます。
+		<ul>
+			<li><strong>ヨコ2048px × タテ512px</strong></li>
+			<li>外装の前面へ設置します。</li>
+			<li>看板テクスチャの入稿がない場合は、代わりにイベント名をテキストで配置します。</li>
+		</ul>
+		(9月19日詳細追記)
+	</li>
+	<li>ブース内の文字は <a href="https://summer2022.vket.com/docs/official_distribution_package#uitemplate">キャンバスのTextコンポーネントの利用</a> を推奨します。
+		<small>入稿ツールに同梱のJQPrefabs modified from VketPrefabsをご利用ください</small></li>
+	<li>QRコードは、Questで読み取るのが困難である (QRコードをURL化できない) ため非推奨です。出展イベント一覧ページを用意する予定ですので、必要であればそちらへ誘導してください。</li>
+</ul>
+<dl>
+	<dt>入稿データ</dt>
+		<dd><ul>
+			<li>ビルドサイズ5MB以内
+				<strong><small>Androidビルドで確認を行う</small></strong></li>
+			<li>テクスチャの圧縮形式は次のいずれか<ul>
+				<li>ASTC compressed 6x6 (圧縮率低・高画質)</li>
+				<li>ASTC compressed 8x8</li>
+				<li>ASTC compressed 10x10 (圧縮率高・低画質)</li>
+			</ul><small><ins>テクスチャのインポート設定で、AndroidプラットフォームのOverrideへチェックを入れてください。</ins> (10月5日追記)</small></li>
+			<li>ライトマップは256×256pxを1枚まで <small>圧縮がかかります。</small></li>
+		</ul></dd>
+	<dt>シーン</dt>
+		<dd><ul>
+			<li>ブースの大きさは4×4×高さ5m以内
+				<small>Unityでシーンの原点から、X軸±2m、Y軸+(上)5m、Z軸±2m</small></li>
+			<li>SetPassCalls 20以内</li>
+			<li>Batches 30以内</li>
+		</ul></dd>
+	<dt>VRC Pickup</dt>
+		<dd><ul>
+			<li>5個以下</li>
+			<li>JQPrefabs modified from VketPrefabs (入稿ツールに同梱) の
+				<a rel="external" href="https://summer2022.vket.com/docs/official_distribution_package_vket_pickup" target="_blank">VketPickupプレハブ</a>を使用</li>
+		</ul></dd>
+	<dt>VRC Station</dt>
+		<dd><ul>
+			<li>JQPrefabs modified from VketPrefabs (入稿ツールに同梱) のVRCChair3プレハブを使用 (10月5日追記)</li>
+		</ul></dd>
+	<dt>Animator</dt>
+		<dd><ul>
+			<li>20個以下</li>
+		</ul></dd>
+	<dt>ライト (Light)</dt>
+		<dd><ul>
+			<li>タイプ (Type) は、スポット (Spot)、ポイント (Point)、エリア (Area) のいずれか</li>
+			<li>モード (Mode) は、ベイク (Baked)</li>
+			<li><small>LightProbeは運営側でブースの周りに設置されます</small></li>
+		</ul></dd>
+	<dt><span>キャンバス</span> <span>(Canvas)</span></dt>
+		<dd><ul>
+			<li>レンダーモード (RenderMode) は、ワールド空間 (WorldSpace)</li>
+		</ul></dd>
+	<dt><span>リジッドボディ</span> <span>(Rigidbody)</span></dt>
+		<dd><ul>
+			<li>キネマティックにする (isKinematic) にチェックを入れる</li>
+		</ul></dd>
+		<dt><span>リフレクション</span><span>プローブ</span><span>(Reflection Probe)</span></dt>
+			<dd><ul>
+				<li>1個以下</li>
+				<li>タイプ (Type) は、カスタム (Custom)、Bake のいずれか</li>
+				<li>128×128px</li>
+			</ul></dd>
+	<dt>Skkined Mesh Renderer</dt>
+		<dd><ul>
+			<li>動かす必要のあるもののみ</li>
+		</ul></dd>
+	<dt>Audio Source</dt>
+		<dd><ul>
+			<li>1個以下</li>
+		</ul></dd>
+	<dt>Particle System</dt>
+		<dd><ul>
+			<li>すべてのParticle Systemコンポーネントの Max Particles の合計値が100以内</li>
+		</ul></dd>
+	<dt>Udon Behaviour</dt>
+		<dd><ul>
+			<li>入稿ツールに同梱のJQPrefabs modified from VketPrefabsのプレハブで使用されているもののみ</li>
+		</ul></dd>
+	<dt><span>その他の使用可能</span><span>コンポーネント</span></dt>
+		<dd><ul>
+			<li>Mesh Filter</li>
+			<li>Mesh Renderer</li>
+			<li>ボックスコライダー (Box Collider)</li>
+			<li>スフィアコライダー (Sphere Collider)</li>
+			<li>カプセルコライダー (Capsule Collider)</li>
+		</ul></dd>
+	<dt><span>使用禁止</span><span>コンポーネント</span></dt>
+		<dd>上記以外のコンポーネント</dd>
+	<dt>使用可能シェーダー</dt>
+		<dd>
+			<ul>
+				<li>VRChat SDK (VRCSDK3-Worlds) に同梱されている以下のシェーダー<ul>
+					<li>VRChat/Mobile/○○○○</li>
+				</ul></li>
+				<li>Unityビルトインの以下のシェーダー<ul>
+					<li>UI/○○○○</li>
+					<li>GUI/○○○○</li>
+					<li>Particles/○○○○</li>
+					<li>Sprites/○○○○</li>
+					<li>Unlit/○○○○</li>
+					<li>Autodesk Interactive/○○○○</li>
+					<li>Standard</li>
+					<li>Standard (Specular setup)</li>
+				</ul></li>
+				<li>TextMesh Proでインポート可能な以下のシェーダー<ul>
+					<li>TextMeshPro/Mobile/Distance Field</li>
+				</ul></li>
+				<li>VRMShaders (UniVRM) のシェーダー<ul>
+					<li>UniGLTF/○○○○</li>
+					<li>VRM/○○○○</li>
+				</ul></li>
+			</ul>
+			<small>いずれも最新安定版を使用してください。</small>
+		</dd>
+	<dt><span>GameObjectの</span><span>静的 (Static) 設定</span></dt><dd><dl>
+		<dt>Animatorで動かすオブジェクト</dt>
+			<dd>出展IDのオブジェクト直下のオブジェクト「Dynamic」配下に入れて、静的 (Static) にはチェックを入れない</dd>
+		<dt>動かないオブジェクト</dt>
+			<dd>出展IDのオブジェクト直下のオブジェクト「Static」配下に入れて、以下にチェックを入れる<ul>
+				<li>Occludee Static</li>
+				<li>Batching Static</li>
+				<li>Reflection Probe Static</li>
+			</ul></dd>
+			<dd>もしライトマップにベイクするならば、上記に追加でContribute GIにもチェックを入れる</dd>
+			<dd>それ以外にはチェックを入れない</dd>
+	</dl></dd>
+</dl>
+
+<h2 id="form">出展申し込みフォーム</h2>
+<ul>
+	<li><s>イベント出展 (ポスター)　申し込みフォーム</s>　満員につき受付終了</li>
+	<li><s>イベント出展 (ブース)　申し込みフォーム</s>　満員につき受付終了</li>
+</ul>
+
+<common-footer></common-footer>
+
+</body>
+</html>

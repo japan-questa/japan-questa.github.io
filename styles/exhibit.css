@@ -1,0 +1,61 @@
+.root > *:not(common-header, common-footer) {
+	width: min(calc(100% - var(--page-margin) * 2), var(--max-page-width));
+}
+
+dt {
+	font-weight: bold;
+}
+
+#form + ul {
+	text-align: center;
+}
+
+/*====================================
+	publicアバターの制限について (ペデスタル)
+*/
+table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	--border-width: 0.1em;
+}
+
+table tr {
+	border-style: solid none;
+	border-width: var(--border-width);
+}
+
+table thead tr:first-child {
+	border-top-style: none;
+}
+
+table thead tr:first-child th:not(:first-child) {
+	border-top: solid var(--border-width);
+}
+
+table tbody tr:nth-child(2n+1) {
+	background: aquamarine;
+}
+
+table thead th:nth-child(2),
+table tbody tr:nth-child(2n+1) td:nth-child(2) {
+	background: lightskyblue;
+}
+
+table thead th:nth-child(3),
+table tbody tr:nth-child(2n+1) td:nth-child(3) {
+	background: lightgreen;
+}
+
+table td {
+	color: mediumblue;
+}
+
+table .limited {
+	color: crimson;
+}
+
+table .forbidden {
+	color: crimson;
+	font-weight: bold;
+}

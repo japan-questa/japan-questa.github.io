@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+	<link rel="icon" href="favicon.ico" />
+	<title>じゃぱんくえすた　アバター出展に関する情報</title>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="じゃぱんくえすた　アバター出展に関する情報" />
+	<meta name="twitter:description" content="『じゃぱんくえすた』の、アバター出展に関する情報をまとめたページです。" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="/styles/common.css?20220820" />
+	<link rel="stylesheet" href="/styles/exhibit.css?20220820" />
+	<script type="module" src="/scripts/index.js?20221015"></script>
+</head>
+<body class="root">
+
+<common-header pageHeading="アバター出展に関する情報"></common-header>
+
+<exhibit-common class="root"></exhibit-common>
+
+<h3>アバター出展</h3>
+<ul>
+	<li>PC/Quest両対応のアバター1体のみ出展可能です。</li>
+	<li>入稿データと合わせて、publicアバターのBlueprint IDを提出していただきます。</li>
+	<li>publicアバターの制限については、下記 <a href="#pedestal-avatar">publicアバターの制限</a> をご参照ください。</li>
+	<li>入稿データに対して、運営側で<a rel="external" href="https://summer2022.vket.com/docs/official_distribution_package_vket_avatar_pedestal" target="_blank">VketPrefabsのVketAvatarPedestal_3D.prefab</a>を設定します。</li>
+	<li><strong>ブース部分やアバター名・QRコードの広告類など、実際に着用するアバター以外を入稿データへ含めることを禁止します。</strong></li>
+</ul>
+<dl>
+	<dt>入稿データ</dt>
+		<dd><ul>
+			<li>ビルドサイズ2MB以内
+				<strong><small>Androidビルドで確認を行う</small></strong></li>
+			<li>テクスチャの圧縮形式は次のいずれか<ul>
+				<li>ASTC compressed 6x6 (圧縮率低・高画質)</li>
+				<li>ASTC compressed 8x8</li>
+				<li>ASTC compressed 10x10 (圧縮率高・低画質)</li>
+			</ul><small><ins>テクスチャのインポート設定で、AndroidプラットフォームのOverrideへチェックを入れてください。</ins> (10月5日追記)</small></li>
+		</ul></dd>
+	<dt>シーン</dt>
+		<dd>ワールド設置アバターは3×3×3m以内
+			<small>Unityでシーンの原点から、X軸±1.5m、Y軸+(上)3m、Z軸±1.5m</small></dd>
+	<dt><span>Mesh Filter</span> <span>/ Mesh Renderer</span></dt>
+		<dd><ul>
+			<li>メッシュ数は2つまで</li>
+			<li>サブメッシュ (マテリアルスロット) 数は全メッシュ合計で2つまで</li>
+			<li>Skinnedメッシュは不可
+				<small><a rel="external" href="https://w.atwiki.jp/virtualmarket/pages/43.html" target="_blank">AvatarPoseBaker</a>を使うと、ボーンを抜いてSkinnedでないメッシュへ変換可能</small></li>
+		</ul></dd>
+	<dt><span>使用禁止</span><span>コンポーネント</span></dt>
+		<dd>上記以外のコンポーネント</dd>
+	<dt>使用可能シェーダー</dt>
+		<dd>
+			<ul>
+				<li>VRChat SDK (VRCSDK3-Avatars) に同梱されている以下のシェーダー<ul>
+					<li>VRChat/Mobile/Matcap Lit</li>
+					<li>VRChat/Mobile/Standard Lite</li>
+					<li>VRChat/Mobile/Toon Lit</li>
+				</ul><small>publicアバターのシェーダーは制限なし</small></li>
+			</ul>
+			<small>SDKは最新安定版を使用してください。</small>
+		</dd>
+</dl>
+
+<h4 id="pedestal-avatar">publicアバターの制限について (ペデスタル)</h1>
+<ul>
+	<li>PC/Quest両対応としてください。</li>
+	<li>PCとQuestで制限が異なります。</li>
+	<li>以下の表のワールドpublic化要件を満たすようにしてください。表にないコンポーネントについて制限はありません。
+		<small>Questのペデスタルにおいては、<q>目安としてはデフォルト表示できないVery Poorアバターをペデスタルに置くのは避けた方がいい</q>という基準があるため、じゃぱんくえすたにおける制限もそれに準じます。</small></li>
+	<li>Dynamic Boneの使用をPC/Quest共に禁止します。<small>VRCPhysBoneは使用可能です。</small></li>
+</ul>
+<table>
+	<thead>
+		<tr>
+			<td></td>
+			<th>PC</th>
+			<th>Quest</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>三角ポリゴン数</th>
+			<td class="limited">70000</td>
+			<td class="limited">20000</td>
+		</tr>
+		<tr>
+			<th>Skinned Mesh数</th>
+			<td class="limited"><del>16</del> <ins>8</ins></td>
+			<td class="limited">2</td>
+		</tr>
+		<tr>
+			<th>Mesh数</th>
+			<td>∞</td>
+			<td class="limited">2</td>
+		</tr>
+		<tr>
+			<th>合計マテリアルスロット数</th>
+			<td class="limited">16</td>
+			<td class="limited">4</td>
+		</tr>
+		<tr>
+			<th>ボーン数</th>
+			<td>∞</td>
+			<td class="limited">150</td>
+		</tr>
+		<tr>
+			<th>Dynamic Bone</th>
+			<td class="forbidden">0</td>
+			<td class="forbidden">0</td>
+		</tr>
+		<tr>
+			<th>Dynamic Bone Collider</th>
+			<td class="forbidden">0</td>
+			<td class="forbidden">0</td>
+		</tr>
+	</tbody>
+</table>
+<p>出典</p>
+<ul>
+	<li><a rel="external" href="https://docs.vrchat.com/docs/quest-content-limitations#section-shaders" target="_blank">Shaders | Quest Content Limitations</a></li>
+	<li><a rel="external" href="https://docs.vrchat.com/docs/avatar-performance-ranking-system#section-quest-limits" target="_blank">Quest Limits | Avatar Performance Ranking System</a></li>
+	<li><a rel="external" href="https://docs.vrchat.com/docs/avatar-performance-ranking-system#section-minimum-displayed-performance-rank" target="_blank">Minimum Displayed Performance Rank | Avatar Performance Ranking System</a></li>
+	<li><a rel="external" href="https://docs.vrchat.com/docs/submitting-a-world-to-be-made-public#section-avatar-worlds-all-avatar-pedestals-in-any-world" target="_blank">Avatar Worlds / All Avatar Pedestals in any World | World Submission and Optimization Guidelines</a></li>
+</ul>
+
+<h2 id="form">出展申し込みフォーム</h2>
+<ul>
+	<li><s>アバター出展　申し込みフォーム</s>　満員につき受付終了</li>
+</ul>
+
+<common-footer></common-footer>
+
+</body>
+</html>

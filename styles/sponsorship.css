@@ -1,0 +1,30 @@
+body .box{
+    margin: 0 auto;
+}
+.box {
+    width: 85%;
+    height: 100%;
+    place-items: center;
+}
+.box div {
+    text-align: center;
+}
+.box div > img {
+    width: 100%;
+}
+.top {
+    padding-bottom: 0.1%;
+}
+.info {
+    display:table-cell;
+    text-align: center;
+}
+a .link {
+    width: 5%;
+}
+a .twitter {
+    width: 10%;
+}
+.info > a {
+    vertical-align: middle;
+}
